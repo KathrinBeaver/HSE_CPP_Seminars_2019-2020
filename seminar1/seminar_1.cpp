@@ -10,6 +10,7 @@ void example0() {
 	std::cout << std::fixed << a << std::endl;    // ? 
 	std::cout << std::fixed << b << std::endl;   // ?? 
 	std::cout << "a - b = " << a - b << std::endl; // ??? 
+	std::cout << "a  b = " << a + b << std::endl;
 
 	double c = 123456789;
 	double d = 123456788;
@@ -37,6 +38,7 @@ void example1() {
 		cout << v1[i] << endl; // или так
 	}
 }
+
 /* Задача 1. Для двумерного массива рассчитать сумму всех его четных и
 нечетных элементов */
 void example2() {
@@ -83,7 +85,7 @@ void example3() {
 		}
 		std::cout << "\n";
 	}
-
+	
 	// Sort row elements
 	std::cout << "\n\n Sorted:\n";
 	for (size_t i = 0; i < size; ++i) {
@@ -128,30 +130,34 @@ void example4() {
 */
 void example5() {
 
-	int number = 7;
+	int number = 1;
 	//int number = 5;
 
 	switch (number) {
-	case 0:
-		cout << "number = 0" << endl;
-		break;
-	case 1:
-	case 2:
-	case 3:
-	case 4:
-	case 5:
-		cout << "number from 1 to 5" << endl;
-	case 6:
-		cout << "number = 6" << endl;
-	case 7:
-		cout << "number = 7" << endl;
-		break;
-	default:
-		cout << "unknown" << endl;
+		case 0:
+			cout << "number = 0" << endl;
+			break;
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+			cout << "number from 1 to 5" << endl;
+			break;
+		case 6:
+			cout << "number = 6" << endl;
+			break;
+		case 7:
+			cout << "number = 7" << endl;
+			break;
+		default:
+			cout << "unknown" << endl;
 	}
 }
 
 int main() {
+
+	/*
 
 	cout << "int - " << sizeof(int) << endl;
 	cout << "unsigned int - " << sizeof(unsigned int) << endl;
@@ -165,6 +171,16 @@ int main() {
 	cout << "size_t - " << sizeof(size_t) << endl;
 	cout << "bool - " << sizeof(bool) << endl;
 	cout << "char - " << sizeof(char) << endl;
+	*/
+
+	cout << "std::int8_t - " << sizeof(std::int8_t) << endl;
+	cout << "std::uint8_t - " << sizeof(std::uint8_t) << endl;
+
+	std::uint8_t num1 = -3;
+	cout << static_cast<int>(num1) << endl;
+
+	std::int8_t num2 = -3;
+	cout << static_cast<int>(num2) << endl;
 
 	//example0();
 	//example1();
