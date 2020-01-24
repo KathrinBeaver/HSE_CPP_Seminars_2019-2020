@@ -5,4 +5,8 @@ CPP seminars
 17.01.2020 - vector, string
 22.01.2020 - pair, tuple, struct
 24.01.2020 - sort, lambda, std::set
+Пример запуска санитайзера:
+> lang++ funny_functions.cpp -o funny_san.exe -fsanitize=address
+https://blog.jetbrains.com/clion/2018/05/clion-starts-2018-2-eap-sanitizers-gradle-db-performance/
+https://habr.com/ru/news/t/472808/
 
