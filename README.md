@@ -16,4 +16,6 @@ https://habr.com/ru/news/t/472808/
 
 29.01.2020 - контейнеры: set, unordered_set, map, multimap и др.
 
+31.01.2020 - контейнеры - продолжение: set, unordered_set, map, multimap и др.
+
 
