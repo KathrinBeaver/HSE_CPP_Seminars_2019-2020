@@ -18,6 +18,12 @@ struct Car {
 		name(_name), price(_price), yearOfProduction(_yearOfProduction) {}
 };
 
+struct SortCar {
+	bool operator ()(const Car& car1, const Car& car2) const {
+		return car1.price < car2.price;
+	}
+};
+
 bool sortByPrice(const Car& car1, const Car& car2) {
 	return car1.price < car2.price;
 }
@@ -39,11 +45,15 @@ void example3_5_0() {
 		cout << number << endl;
 	}
 
-	set<Car> garage;
+	set<Car, SortCar> garage;
+	//set<Car> garage;
 	garage.insert({ "Audi", 100500, 2017 });
+	//garage.emplace({ "Audi", 100500, 2017 });
 	garage.emplace("Bmw", 100501, 2016);
 	garage.insert({ "Audi", 100502, 2018 });
 	garage.insert({ "ZaZ", 100, 2010 });
+
+	garage.find({ "Audi", 111, 22 });
 
 	for (const auto& car : garage) {
 		cout << "The car is: " << car.name << " price: " << car.price << endl;
@@ -77,11 +87,16 @@ void example3_5_1() {
 	myMap.insert(pair<char, int>('z', 300));
 	myMap.insert({ 'ab', 400 }); // ошибка? (на самом деле - да, но VS такое "cъест").  
 	myMap.insert({ '1', 500 });
-	myMap.insert({ '1', 600 });
+	
+	auto retVal = myMap.insert({ '1', 600 });
+
+	cout << "\nInsert returned: " << retVal.first->first << "  " << retVal.first->second << "  " << retVal.second;
+	cout << "\nInsert returned: " << (*retVal.first).first << "  " << (*retVal.first).second << "  " << retVal.second;
+	
 	myMap.emplace('1', 700);
 	//myMap['1'] = 800;
 
-	cout << "myMap contains:";
+	cout << "\nmyMap contains:";
 	cout << "\t{";
 	for (const auto& x : myMap) {
 		cout << "\'" << x.first << "\':" << x.second << ", ";
@@ -113,6 +128,10 @@ struct StringHashBySize {
 	// На засыпку: что значит последний const?
 	size_t operator()(const string& str) const {
 		int size = str.length();
+
+		//hash<int> hashInt;
+		//return hashInt(size);
+
 		return hash<int>()(size);
 	}
 };
@@ -131,15 +150,15 @@ struct StringEqualBySize {
 
 void example3_5_2() {
 	// Объявление сета с собственными функциями определения уникальности элемента
-	//unordered_set<string, StringHashBySize, StringEqualBySize> setOfStrs;
-	unordered_set<string> setOfStrs;
+	unordered_set<string, StringHashBySize, StringEqualBySize> setOfStrs;
+	//unordered_set<string> setOfStrs1;
 
 	setOfStrs.insert("First");
 	setOfStrs.insert("second");
 
 	// Будет ли добавлено? 
 	setOfStrs.insert("third");
-	setOfStrs.insert("second");
+	setOfStrs.insert("Second");
 	setOfStrs.insert("five");
 
 	for (const string& s : setOfStrs) {
@@ -224,12 +243,12 @@ int multimapExample() {
 
 
 int main() {
-	
-	
+
 	string line;
 
 	ifstream in("testIn.txt");
 
+	cout << "Read from file: \n" << endl;
 	if (in.is_open()) {
 		while (getline(in, line)) {
 			cout << line << endl;
@@ -239,12 +258,11 @@ int main() {
 	ofstream out;
 	out.open("testOut.txt");
 	out << "Hello";
-	
 
 	//example3_5_0();
 	//calculateDigitsCount();
 
-	//example3_5_1();  
+	example3_5_1();  
 	//example3_5_2();
 
 	//calculateWordsCount();	
