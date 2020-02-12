@@ -20,4 +20,7 @@ https://habr.com/ru/news/t/472808/
 
 07.02.2020 - stack, deque, list, queue, priority_queue
 
+12.02.2020 - iterator, algorithms
+
+
 
