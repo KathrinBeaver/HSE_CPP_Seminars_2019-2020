@@ -22,5 +22,7 @@ https://habr.com/ru/news/t/472808/
 
 12.02.2020 - iterator, algorithms
 
+14.02.2020 - стандартные алгоритмы, предикаты, итераторы, namespaces
+
 
 
