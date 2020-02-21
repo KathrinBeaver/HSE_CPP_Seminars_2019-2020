@@ -26,5 +26,7 @@ https://habr.com/ru/news/t/472808/
 
 19.02.2020 - classes
 
+21.02.2020 - exceptions
+
 
 
