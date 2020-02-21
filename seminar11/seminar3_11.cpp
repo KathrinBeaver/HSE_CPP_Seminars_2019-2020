@@ -27,7 +27,7 @@ public:
 		std::cout << "!!! new object Point(x, y) id = " << id << "\n";
 	}
 
-	// êîíñòðóêòîð êîïèðîâàíèÿ
+	// ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ
 	Point(const Point& other) : id(++count) {
 		++realCount;
 		this->x = other.x;
@@ -123,7 +123,7 @@ void example1() {
 	{
 		std::cout << "Exception!!!" << std::endl;
 	}
-    catch(...) {/* Ëîâèì âñå âîçìîæíûå èñêëþ÷åíèÿ*/
+    catch(...) {/* Ð›Ð¾Ð²Ð¸Ð¼ Ð²ÑÐµ Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ñ‹Ðµ Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ*/
         std::cout << "ERROR!!! " << std::endl;
     }
 

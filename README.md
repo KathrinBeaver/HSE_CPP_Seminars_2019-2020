@@ -28,5 +28,7 @@ https://habr.com/ru/news/t/472808/
 
 21.02.2020 - exceptions
 
+22.02.2020 - bit operations, bitset
+
 
 
