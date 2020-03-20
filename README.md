@@ -42,5 +42,7 @@ https://habr.com/ru/news/t/472808/
 
 18.03.2020 - placement new
 
+20.03.2020 - агрегация, композиция, Singleton
+
 
 
